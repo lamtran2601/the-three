@@ -18,13 +18,32 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
-    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "types": ["node", "jest"],
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@drizzle": ["../../packages/drizzle"],
+      "@shared": ["../../packages/shared"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mjs", "jest.config.js", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mjs",
+    "jest.config.js",
+    ".next/types/**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "../../packages/drizzle"
+    },
+    {
+      "path": "../../packages/shared"
+    }
+  ],
   "exclude": ["node_modules"]
 }
