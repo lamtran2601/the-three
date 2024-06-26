@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@drizzle": ["../../packages/drizzle"],
+      "@shared": ["../../packages/shared"],
+      "@gql/gql": ["module/gql/src"],
+      "@gql/gql/*": ["module/gql/src/*"],
+      "@db/db": ["module/db/src"],
+      "@db/db/*": ["module/db/src/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "../../packages/drizzle"
+    },
+    {
+      "path": "../../packages/shared"
+    }
+  ]
+}
