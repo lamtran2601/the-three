@@ -1,6 +1,6 @@
+import { Env } from '@/env';
 import { DrizzlePostgresModule } from '@knaadh/nestjs-drizzle-postgres';
 import { DynamicModule, Module } from '@nestjs/common';
-import { Env } from '@shared';
 import { DrizzleConfig } from 'drizzle-orm';
 
 @Module({})

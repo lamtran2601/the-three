@@ -1,8 +1,8 @@
-import { DBSchema, schema } from '@drizzle';
+import { DBSchema, schema } from '@/drizzle';
 import { Module } from '@nestjs/common';
 import { buildSchema } from 'drizzle-graphql';
-import { DBModule } from 'modules/db';
-import { GqlModule } from 'modules/gql';
+import { DBModule } from '@/modules/db';
+import { GqlModule } from '@/modules/gql';
 
 @Module({
   imports: [

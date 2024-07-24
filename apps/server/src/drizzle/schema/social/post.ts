@@ -1,3 +1,4 @@
+import { user } from '@/drizzle/schema/shared/user';
 import { relations } from 'drizzle-orm';
 import {
   date,
@@ -7,8 +8,7 @@ import {
   serial,
   text,
 } from 'drizzle-orm/pg-core';
-import { user } from 'schema/shared';
-import { comment } from 'schema/social/comment';
+import { comment } from '@/drizzle/schema/social/comment';
 
 export const post = pgTable('post', {
   id: serial('id').primaryKey(),

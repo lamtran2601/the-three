@@ -2,7 +2,7 @@ import { relations } from 'drizzle-orm';
 import { integer, pgTable, text } from 'drizzle-orm/pg-core';
 import { category } from './category';
 import { brand } from './brand';
-import { baseColumns } from 'utils/base.columns';
+import { baseColumns } from '@/drizzle/utils/base.columns';
 
 // product schema
 export const product = pgTable('product', {

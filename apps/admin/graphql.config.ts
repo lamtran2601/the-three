@@ -1,34 +1,34 @@
-import type { IGraphQLConfig } from "graphql-config";
+import type { IGraphQLConfig } from 'graphql-config';
 
 const config: IGraphQLConfig = {
-  schema: "https://api.crm.refine.dev/graphql",
+  schema: 'http://localhost:3000/graphql',
   extensions: {
     codegen: {
       hooks: {
-        afterOneFileWrite: ["eslint --fix", "prettier --write"],
+        afterOneFileWrite: ['eslint --fix', 'prettier --write'],
       },
       generates: {
-        "src/graphql/schema.types.ts": {
-          plugins: ["typescript"],
+        'src/graphql/schema.types.ts': {
+          plugins: ['typescript'],
           config: {
             skipTypename: true,
             enumsAsTypes: true,
           },
         },
-        "src/graphql/types.ts": {
-          preset: "import-types",
-          documents: ["src/**/*.{ts,tsx}"],
-          plugins: ["typescript-operations"],
-          config: {
-            skipTypename: true,
-            enumsAsTypes: true,
-            preResolveTypes: false,
-            useTypeImports: true,
-          },
-          presetConfig: {
-            typesPath: "./schema.types",
-          },
-        },
+        // 'src/graphql/types.ts': {
+        //   preset: 'import-types',
+        //   documents: ['src/**/*.{ts,tsx}'],
+        //   plugins: ['typescript-operations'],
+        //   config: {
+        //     skipTypename: true,
+        //     enumsAsTypes: true,
+        //     preResolveTypes: false,
+        //     useTypeImports: true,
+        //   },
+        //   presetConfig: {
+        //     typesPath: './schema.types',
+        //   },
+        // },
       },
     },
   },

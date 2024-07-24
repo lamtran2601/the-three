@@ -1,32 +1,29 @@
-input BrandInsertInput {
+input UserInsertInput {
   id: Int
   createdAt: String
   updatedAt: String
   name: String
-  description: String
-  image: String
+  email: String
 }
 
-input BrandUpdateInput {
+input UserUpdateInput {
   id: Int
   createdAt: String
   updatedAt: String
   name: String
-  description: String
-  image: String
+  email: String
 }
 
-input BrandFilters {
-  id: BrandIdFilters
-  createdAt: BrandCreatedAtFilters
-  updatedAt: BrandUpdatedAtFilters
-  name: BrandNameFilters
-  description: BrandDescriptionFilters
-  image: BrandImageFilters
-  OR: [BrandFiltersOr!]
+input UserFilters {
+  id: UserIdFilters
+  createdAt: UserCreatedAtFilters
+  updatedAt: UserUpdatedAtFilters
+  name: UserNameFilters
+  email: UserEmailFilters
+  OR: [UserFiltersOr!]
 }
 
-input BrandIdFilters {
+input UserIdFilters {
   eq: Int
   ne: Int
   lt: Int
@@ -45,10 +42,10 @@ input BrandIdFilters {
   notInArray: [Int!]
   isNull: Boolean
   isNotNull: Boolean
-  OR: [BrandIdfiltersOr!]
+  OR: [UserIdfiltersOr!]
 }
 
-input BrandIdfiltersOr {
+input UserIdfiltersOr {
   eq: Int
   ne: Int
   lt: Int
@@ -69,7 +66,7 @@ input BrandIdfiltersOr {
   isNotNull: Boolean
 }
 
-input BrandCreatedAtFilters {
+input UserCreatedAtFilters {
   eq: String
   ne: String
   lt: String
@@ -88,53 +85,10 @@ input BrandCreatedAtFilters {
   notInArray: [String!]
   isNull: Boolean
   isNotNull: Boolean
-  OR: [BrandCreatedAtfiltersOr!]
+  OR: [UserCreatedAtfiltersOr!]
 }
 
-input BrandCreatedAtfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input BrandUpdatedAtFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [BrandUpdatedAtfiltersOr!]
-}
-
-input BrandUpdatedAtfiltersOr {
+input UserCreatedAtfiltersOr {
   eq: String
   ne: String
   lt: String
@@ -155,7 +109,7 @@ input BrandUpdatedAtfiltersOr {
   isNotNull: Boolean
 }
 
-input BrandNameFilters {
+input UserUpdatedAtFilters {
   eq: String
   ne: String
   lt: String
@@ -174,53 +128,10 @@ input BrandNameFilters {
   notInArray: [String!]
   isNull: Boolean
   isNotNull: Boolean
-  OR: [BrandNamefiltersOr!]
+  OR: [UserUpdatedAtfiltersOr!]
 }
 
-input BrandNamefiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input BrandDescriptionFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [BrandDescriptionfiltersOr!]
-}
-
-input BrandDescriptionfiltersOr {
+input UserUpdatedAtfiltersOr {
   eq: String
   ne: String
   lt: String
@@ -241,7 +152,7 @@ input BrandDescriptionfiltersOr {
   isNotNull: Boolean
 }
 
-input BrandImageFilters {
+input UserNameFilters {
   eq: String
   ne: String
   lt: String
@@ -260,10 +171,10 @@ input BrandImageFilters {
   notInArray: [String!]
   isNull: Boolean
   isNotNull: Boolean
-  OR: [BrandImagefiltersOr!]
+  OR: [UserNamefiltersOr!]
 }
 
-input BrandImagefiltersOr {
+input UserNamefiltersOr {
   eq: String
   ne: String
   lt: String
@@ -284,22 +195,63 @@ input BrandImagefiltersOr {
   isNotNull: Boolean
 }
 
-input BrandFiltersOr {
-  id: BrandIdFilters
-  createdAt: BrandCreatedAtFilters
-  updatedAt: BrandUpdatedAtFilters
-  name: BrandNameFilters
-  description: BrandDescriptionFilters
-  image: BrandImageFilters
+input UserEmailFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [UserEmailfiltersOr!]
 }
 
-input BrandOrderBy {
+input UserEmailfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input UserFiltersOr {
+  id: UserIdFilters
+  createdAt: UserCreatedAtFilters
+  updatedAt: UserUpdatedAtFilters
+  name: UserNameFilters
+  email: UserEmailFilters
+}
+
+input UserOrderBy {
   id: InnerOrder
   createdAt: InnerOrder
   updatedAt: InnerOrder
   name: InnerOrder
-  description: InnerOrder
-  image: InnerOrder
+  email: InnerOrder
 }
 
 input InnerOrder {
@@ -316,310 +268,6 @@ enum OrderDirection {
 
   """Descending order"""
   desc
-}
-
-input CartInsertInput {
-  id: Int
-  createdAt: String
-  updatedAt: String
-  quantity: Int
-  userId: Int
-  productId: Int
-}
-
-input CartUpdateInput {
-  id: Int
-  createdAt: String
-  updatedAt: String
-  quantity: Int
-  userId: Int
-  productId: Int
-}
-
-input CartFilters {
-  id: CartIdFilters
-  createdAt: CartCreatedAtFilters
-  updatedAt: CartUpdatedAtFilters
-  quantity: CartQuantityFilters
-  userId: CartUserIdFilters
-  productId: CartProductIdFilters
-  OR: [CartFiltersOr!]
-}
-
-input CartIdFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CartIdfiltersOr!]
-}
-
-input CartIdfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CartCreatedAtFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CartCreatedAtfiltersOr!]
-}
-
-input CartCreatedAtfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CartUpdatedAtFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CartUpdatedAtfiltersOr!]
-}
-
-input CartUpdatedAtfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CartQuantityFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CartQuantityfiltersOr!]
-}
-
-input CartQuantityfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CartUserIdFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CartUserIdfiltersOr!]
-}
-
-input CartUserIdfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CartProductIdFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CartProductIdfiltersOr!]
-}
-
-input CartProductIdfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CartFiltersOr {
-  id: CartIdFilters
-  createdAt: CartCreatedAtFilters
-  updatedAt: CartUpdatedAtFilters
-  quantity: CartQuantityFilters
-  userId: CartUserIdFilters
-  productId: CartProductIdFilters
-}
-
-input CartOrderBy {
-  id: InnerOrder
-  createdAt: InnerOrder
-  updatedAt: InnerOrder
-  quantity: InnerOrder
-  userId: InnerOrder
-  productId: InnerOrder
 }
 
 input CategoryInsertInput {
@@ -926,45 +574,47 @@ input CategoryOrderBy {
   image: InnerOrder
 }
 
-input CommentInsertInput {
+input ProductInsertInput {
   id: Int
-  content: String
-
-  """JSON"""
-  data: String
   createdAt: String
   updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
+  name: String
+  price: Int
+  description: String
+  image: String
+  rating: Int
+  categoryId: Int
+  brandId: Int
 }
 
-input CommentUpdateInput {
+input ProductUpdateInput {
   id: Int
-  content: String
-
-  """JSON"""
-  data: String
   createdAt: String
   updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
+  name: String
+  price: Int
+  description: String
+  image: String
+  rating: Int
+  categoryId: Int
+  brandId: Int
 }
 
-input CommentFilters {
-  id: CommentIdFilters
-  content: CommentContentFilters
-  data: CommentDataFilters
-  createdAt: CommentCreatedAtFilters
-  updatedAt: CommentUpdatedAtFilters
-  authorId: CommentAuthorIdFilters
-  postId: CommentPostIdFilters
-  parentId: CommentParentIdFilters
-  OR: [CommentFiltersOr!]
+input ProductFilters {
+  id: ProductIdFilters
+  createdAt: ProductCreatedAtFilters
+  updatedAt: ProductUpdatedAtFilters
+  name: ProductNameFilters
+  price: ProductPriceFilters
+  description: ProductDescriptionFilters
+  image: ProductImageFilters
+  rating: ProductRatingFilters
+  categoryId: ProductCategoryIdFilters
+  brandId: ProductBrandIdFilters
+  OR: [ProductFiltersOr!]
 }
 
-input CommentIdFilters {
+input ProductIdFilters {
   eq: Int
   ne: Int
   lt: Int
@@ -983,247 +633,10 @@ input CommentIdFilters {
   notInArray: [Int!]
   isNull: Boolean
   isNotNull: Boolean
-  OR: [CommentIdfiltersOr!]
+  OR: [ProductIdfiltersOr!]
 }
 
-input CommentIdfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CommentContentFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CommentContentfiltersOr!]
-}
-
-input CommentContentfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CommentDataFilters {
-  """JSON"""
-  eq: String
-
-  """JSON"""
-  ne: String
-
-  """JSON"""
-  lt: String
-
-  """JSON"""
-  lte: String
-
-  """JSON"""
-  gt: String
-
-  """JSON"""
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<JSON>"""
-  inArray: [String!]
-
-  """Array<JSON>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CommentDatafiltersOr!]
-}
-
-input CommentDatafiltersOr {
-  """JSON"""
-  eq: String
-
-  """JSON"""
-  ne: String
-
-  """JSON"""
-  lt: String
-
-  """JSON"""
-  lte: String
-
-  """JSON"""
-  gt: String
-
-  """JSON"""
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<JSON>"""
-  inArray: [String!]
-
-  """Array<JSON>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CommentCreatedAtFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CommentCreatedAtfiltersOr!]
-}
-
-input CommentCreatedAtfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CommentUpdatedAtFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CommentUpdatedAtfiltersOr!]
-}
-
-input CommentUpdatedAtfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input CommentAuthorIdFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [CommentAuthorIdfiltersOr!]
-}
-
-input CommentAuthorIdfiltersOr {
+input ProductIdfiltersOr {
   eq: Int
   ne: Int
   lt: Int
@@ -1244,7 +657,136 @@ input CommentAuthorIdfiltersOr {
   isNotNull: Boolean
 }
 
-input CommentPostIdFilters {
+input ProductCreatedAtFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [ProductCreatedAtfiltersOr!]
+}
+
+input ProductCreatedAtfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input ProductUpdatedAtFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [ProductUpdatedAtfiltersOr!]
+}
+
+input ProductUpdatedAtfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input ProductNameFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [ProductNamefiltersOr!]
+}
+
+input ProductNamefiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input ProductPriceFilters {
   eq: Int
   ne: Int
   lt: Int
@@ -1263,10 +805,10 @@ input CommentPostIdFilters {
   notInArray: [Int!]
   isNull: Boolean
   isNotNull: Boolean
-  OR: [CommentPostIdfiltersOr!]
+  OR: [ProductPricefiltersOr!]
 }
 
-input CommentPostIdfiltersOr {
+input ProductPricefiltersOr {
   eq: Int
   ne: Int
   lt: Int
@@ -1287,7 +829,93 @@ input CommentPostIdfiltersOr {
   isNotNull: Boolean
 }
 
-input CommentParentIdFilters {
+input ProductDescriptionFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [ProductDescriptionfiltersOr!]
+}
+
+input ProductDescriptionfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input ProductImageFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [ProductImagefiltersOr!]
+}
+
+input ProductImagefiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input ProductRatingFilters {
   eq: Int
   ne: Int
   lt: Int
@@ -1306,10 +934,10 @@ input CommentParentIdFilters {
   notInArray: [Int!]
   isNull: Boolean
   isNotNull: Boolean
-  OR: [CommentParentIdfiltersOr!]
+  OR: [ProductRatingfiltersOr!]
 }
 
-input CommentParentIdfiltersOr {
+input ProductRatingfiltersOr {
   eq: Int
   ne: Int
   lt: Int
@@ -1330,26 +958,724 @@ input CommentParentIdfiltersOr {
   isNotNull: Boolean
 }
 
-input CommentFiltersOr {
-  id: CommentIdFilters
-  content: CommentContentFilters
-  data: CommentDataFilters
-  createdAt: CommentCreatedAtFilters
-  updatedAt: CommentUpdatedAtFilters
-  authorId: CommentAuthorIdFilters
-  postId: CommentPostIdFilters
-  parentId: CommentParentIdFilters
+input ProductCategoryIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [ProductCategoryIdfiltersOr!]
 }
 
-input CommentOrderBy {
+input ProductCategoryIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input ProductBrandIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [ProductBrandIdfiltersOr!]
+}
+
+input ProductBrandIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input ProductFiltersOr {
+  id: ProductIdFilters
+  createdAt: ProductCreatedAtFilters
+  updatedAt: ProductUpdatedAtFilters
+  name: ProductNameFilters
+  price: ProductPriceFilters
+  description: ProductDescriptionFilters
+  image: ProductImageFilters
+  rating: ProductRatingFilters
+  categoryId: ProductCategoryIdFilters
+  brandId: ProductBrandIdFilters
+}
+
+input ProductOrderBy {
   id: InnerOrder
-  content: InnerOrder
-  data: InnerOrder
   createdAt: InnerOrder
   updatedAt: InnerOrder
-  authorId: InnerOrder
-  postId: InnerOrder
-  parentId: InnerOrder
+  name: InnerOrder
+  price: InnerOrder
+  description: InnerOrder
+  image: InnerOrder
+  rating: InnerOrder
+  categoryId: InnerOrder
+  brandId: InnerOrder
+}
+
+input BrandInsertInput {
+  id: Int
+  createdAt: String
+  updatedAt: String
+  name: String
+  description: String
+  image: String
+}
+
+input BrandUpdateInput {
+  id: Int
+  createdAt: String
+  updatedAt: String
+  name: String
+  description: String
+  image: String
+}
+
+input BrandFilters {
+  id: BrandIdFilters
+  createdAt: BrandCreatedAtFilters
+  updatedAt: BrandUpdatedAtFilters
+  name: BrandNameFilters
+  description: BrandDescriptionFilters
+  image: BrandImageFilters
+  OR: [BrandFiltersOr!]
+}
+
+input BrandIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [BrandIdfiltersOr!]
+}
+
+input BrandIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input BrandCreatedAtFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [BrandCreatedAtfiltersOr!]
+}
+
+input BrandCreatedAtfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input BrandUpdatedAtFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [BrandUpdatedAtfiltersOr!]
+}
+
+input BrandUpdatedAtfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input BrandNameFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [BrandNamefiltersOr!]
+}
+
+input BrandNamefiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input BrandDescriptionFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [BrandDescriptionfiltersOr!]
+}
+
+input BrandDescriptionfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input BrandImageFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [BrandImagefiltersOr!]
+}
+
+input BrandImagefiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input BrandFiltersOr {
+  id: BrandIdFilters
+  createdAt: BrandCreatedAtFilters
+  updatedAt: BrandUpdatedAtFilters
+  name: BrandNameFilters
+  description: BrandDescriptionFilters
+  image: BrandImageFilters
+}
+
+input BrandOrderBy {
+  id: InnerOrder
+  createdAt: InnerOrder
+  updatedAt: InnerOrder
+  name: InnerOrder
+  description: InnerOrder
+  image: InnerOrder
+}
+
+input CartInsertInput {
+  id: Int
+  createdAt: String
+  updatedAt: String
+  quantity: Int
+  userId: Int
+  productId: Int
+}
+
+input CartUpdateInput {
+  id: Int
+  createdAt: String
+  updatedAt: String
+  quantity: Int
+  userId: Int
+  productId: Int
+}
+
+input CartFilters {
+  id: CartIdFilters
+  createdAt: CartCreatedAtFilters
+  updatedAt: CartUpdatedAtFilters
+  quantity: CartQuantityFilters
+  userId: CartUserIdFilters
+  productId: CartProductIdFilters
+  OR: [CartFiltersOr!]
+}
+
+input CartIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CartIdfiltersOr!]
+}
+
+input CartIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CartCreatedAtFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CartCreatedAtfiltersOr!]
+}
+
+input CartCreatedAtfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CartUpdatedAtFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CartUpdatedAtfiltersOr!]
+}
+
+input CartUpdatedAtfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CartQuantityFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CartQuantityfiltersOr!]
+}
+
+input CartQuantityfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CartUserIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CartUserIdfiltersOr!]
+}
+
+input CartUserIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CartProductIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CartProductIdfiltersOr!]
+}
+
+input CartProductIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CartFiltersOr {
+  id: CartIdFilters
+  createdAt: CartCreatedAtFilters
+  updatedAt: CartUpdatedAtFilters
+  quantity: CartQuantityFilters
+  userId: CartUserIdFilters
+  productId: CartProductIdFilters
+}
+
+input CartOrderBy {
+  id: InnerOrder
+  createdAt: InnerOrder
+  updatedAt: InnerOrder
+  quantity: InnerOrder
+  userId: InnerOrder
+  productId: InnerOrder
 }
 
 input OrderInsertInput {
@@ -2008,6 +2334,432 @@ input OrderItemOrderBy {
   productId: InnerOrder
 }
 
+input CommentInsertInput {
+  id: Int
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+}
+
+input CommentUpdateInput {
+  id: Int
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+}
+
+input CommentFilters {
+  id: CommentIdFilters
+  content: CommentContentFilters
+  data: CommentDataFilters
+  createdAt: CommentCreatedAtFilters
+  updatedAt: CommentUpdatedAtFilters
+  authorId: CommentAuthorIdFilters
+  postId: CommentPostIdFilters
+  parentId: CommentParentIdFilters
+  OR: [CommentFiltersOr!]
+}
+
+input CommentIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CommentIdfiltersOr!]
+}
+
+input CommentIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CommentContentFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CommentContentfiltersOr!]
+}
+
+input CommentContentfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CommentDataFilters {
+  """JSON"""
+  eq: String
+
+  """JSON"""
+  ne: String
+
+  """JSON"""
+  lt: String
+
+  """JSON"""
+  lte: String
+
+  """JSON"""
+  gt: String
+
+  """JSON"""
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<JSON>"""
+  inArray: [String!]
+
+  """Array<JSON>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CommentDatafiltersOr!]
+}
+
+input CommentDatafiltersOr {
+  """JSON"""
+  eq: String
+
+  """JSON"""
+  ne: String
+
+  """JSON"""
+  lt: String
+
+  """JSON"""
+  lte: String
+
+  """JSON"""
+  gt: String
+
+  """JSON"""
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<JSON>"""
+  inArray: [String!]
+
+  """Array<JSON>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CommentCreatedAtFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CommentCreatedAtfiltersOr!]
+}
+
+input CommentCreatedAtfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CommentUpdatedAtFilters {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CommentUpdatedAtfiltersOr!]
+}
+
+input CommentUpdatedAtfiltersOr {
+  eq: String
+  ne: String
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [String!]
+
+  """Array<undefined>"""
+  notInArray: [String!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CommentAuthorIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CommentAuthorIdfiltersOr!]
+}
+
+input CommentAuthorIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CommentPostIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CommentPostIdfiltersOr!]
+}
+
+input CommentPostIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CommentParentIdFilters {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+  OR: [CommentParentIdfiltersOr!]
+}
+
+input CommentParentIdfiltersOr {
+  eq: Int
+  ne: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  like: String
+  notLike: String
+  ilike: String
+  notIlike: String
+
+  """Array<undefined>"""
+  inArray: [Int!]
+
+  """Array<undefined>"""
+  notInArray: [Int!]
+  isNull: Boolean
+  isNotNull: Boolean
+}
+
+input CommentFiltersOr {
+  id: CommentIdFilters
+  content: CommentContentFilters
+  data: CommentDataFilters
+  createdAt: CommentCreatedAtFilters
+  updatedAt: CommentUpdatedAtFilters
+  authorId: CommentAuthorIdFilters
+  postId: CommentPostIdFilters
+  parentId: CommentParentIdFilters
+}
+
+input CommentOrderBy {
+  id: InnerOrder
+  content: InnerOrder
+  data: InnerOrder
+  createdAt: InnerOrder
+  updatedAt: InnerOrder
+  authorId: InnerOrder
+  postId: InnerOrder
+  parentId: InnerOrder
+}
+
 input PostInsertInput {
   id: Int
   content: String
@@ -2386,8 +3138,141 @@ input PostOrderBy {
   parentId: InnerOrder
 }
 
-input ProductInsertInput {
-  id: Int
+type UserSelectItem {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  email: String
+  createdPosts(where: PostFilters, orderBy: PostOrderBy, offset: Int, limit: Int): [UserCreatedPostsRelation!]!
+}
+
+type UserCreatedPostsRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  parentId: Int
+  createdBy(where: UserFilters): UserCreatedPostsRelationCreatedByRelation
+  parent(where: PostFilters): UserCreatedPostsRelationParentRelation
+  comments(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [UserCreatedPostsRelationCommentsRelation!]!
+}
+
+type UserCreatedPostsRelationCreatedByRelation {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  email: String
+}
+
+type UserCreatedPostsRelationParentRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  parentId: Int
+}
+
+type UserCreatedPostsRelationCommentsRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+  createdBy(where: UserFilters): UserCreatedPostsRelationCommentsRelationCreatedByRelation
+  post(where: PostFilters): UserCreatedPostsRelationCommentsRelationPostRelation
+  parent(where: CommentFilters): UserCreatedPostsRelationCommentsRelationParentRelation
+  children(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [UserCreatedPostsRelationCommentsRelationChildrenRelation!]!
+}
+
+type UserCreatedPostsRelationCommentsRelationCreatedByRelation {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  email: String
+}
+
+type UserCreatedPostsRelationCommentsRelationPostRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  parentId: Int
+}
+
+type UserCreatedPostsRelationCommentsRelationParentRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+}
+
+type UserCreatedPostsRelationCommentsRelationChildrenRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+}
+
+type UserItem {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  email: String
+}
+
+type CategorySelectItem {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  description: String
+  image: String
+}
+
+type CategoryItem {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  description: String
+  image: String
+}
+
+type ProductSelectItem {
+  id: Int!
   createdAt: String
   updatedAt: String
   name: String
@@ -2397,10 +3282,30 @@ input ProductInsertInput {
   rating: Int
   categoryId: Int
   brandId: Int
+  category(where: CategoryFilters): ProductCategoryRelation
+  brand(where: BrandFilters): ProductBrandRelation
 }
 
-input ProductUpdateInput {
-  id: Int
+type ProductCategoryRelation {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  description: String
+  image: String
+}
+
+type ProductBrandRelation {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  description: String
+  image: String
+}
+
+type ProductItem {
+  id: Int!
   createdAt: String
   updatedAt: String
   name: String
@@ -2410,732 +3315,6 @@ input ProductUpdateInput {
   rating: Int
   categoryId: Int
   brandId: Int
-}
-
-input ProductFilters {
-  id: ProductIdFilters
-  createdAt: ProductCreatedAtFilters
-  updatedAt: ProductUpdatedAtFilters
-  name: ProductNameFilters
-  price: ProductPriceFilters
-  description: ProductDescriptionFilters
-  image: ProductImageFilters
-  rating: ProductRatingFilters
-  categoryId: ProductCategoryIdFilters
-  brandId: ProductBrandIdFilters
-  OR: [ProductFiltersOr!]
-}
-
-input ProductIdFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductIdfiltersOr!]
-}
-
-input ProductIdfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductCreatedAtFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductCreatedAtfiltersOr!]
-}
-
-input ProductCreatedAtfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductUpdatedAtFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductUpdatedAtfiltersOr!]
-}
-
-input ProductUpdatedAtfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductNameFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductNamefiltersOr!]
-}
-
-input ProductNamefiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductPriceFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductPricefiltersOr!]
-}
-
-input ProductPricefiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductDescriptionFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductDescriptionfiltersOr!]
-}
-
-input ProductDescriptionfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductImageFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductImagefiltersOr!]
-}
-
-input ProductImagefiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductRatingFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductRatingfiltersOr!]
-}
-
-input ProductRatingfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductCategoryIdFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductCategoryIdfiltersOr!]
-}
-
-input ProductCategoryIdfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductBrandIdFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [ProductBrandIdfiltersOr!]
-}
-
-input ProductBrandIdfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input ProductFiltersOr {
-  id: ProductIdFilters
-  createdAt: ProductCreatedAtFilters
-  updatedAt: ProductUpdatedAtFilters
-  name: ProductNameFilters
-  price: ProductPriceFilters
-  description: ProductDescriptionFilters
-  image: ProductImageFilters
-  rating: ProductRatingFilters
-  categoryId: ProductCategoryIdFilters
-  brandId: ProductBrandIdFilters
-}
-
-input ProductOrderBy {
-  id: InnerOrder
-  createdAt: InnerOrder
-  updatedAt: InnerOrder
-  name: InnerOrder
-  price: InnerOrder
-  description: InnerOrder
-  image: InnerOrder
-  rating: InnerOrder
-  categoryId: InnerOrder
-  brandId: InnerOrder
-}
-
-input UserInsertInput {
-  id: Int
-  createdAt: String
-  updatedAt: String
-  name: String
-  email: String
-}
-
-input UserUpdateInput {
-  id: Int
-  createdAt: String
-  updatedAt: String
-  name: String
-  email: String
-}
-
-input UserFilters {
-  id: UserIdFilters
-  createdAt: UserCreatedAtFilters
-  updatedAt: UserUpdatedAtFilters
-  name: UserNameFilters
-  email: UserEmailFilters
-  OR: [UserFiltersOr!]
-}
-
-input UserIdFilters {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [UserIdfiltersOr!]
-}
-
-input UserIdfiltersOr {
-  eq: Int
-  ne: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [Int!]
-
-  """Array<undefined>"""
-  notInArray: [Int!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input UserCreatedAtFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [UserCreatedAtfiltersOr!]
-}
-
-input UserCreatedAtfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input UserUpdatedAtFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [UserUpdatedAtfiltersOr!]
-}
-
-input UserUpdatedAtfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input UserNameFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [UserNamefiltersOr!]
-}
-
-input UserNamefiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input UserEmailFilters {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-  OR: [UserEmailfiltersOr!]
-}
-
-input UserEmailfiltersOr {
-  eq: String
-  ne: String
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  like: String
-  notLike: String
-  ilike: String
-  notIlike: String
-
-  """Array<undefined>"""
-  inArray: [String!]
-
-  """Array<undefined>"""
-  notInArray: [String!]
-  isNull: Boolean
-  isNotNull: Boolean
-}
-
-input UserFiltersOr {
-  id: UserIdFilters
-  createdAt: UserCreatedAtFilters
-  updatedAt: UserUpdatedAtFilters
-  name: UserNameFilters
-  email: UserEmailFilters
-}
-
-input UserOrderBy {
-  id: InnerOrder
-  createdAt: InnerOrder
-  updatedAt: InnerOrder
-  name: InnerOrder
-  email: InnerOrder
 }
 
 type BrandSelectItem {
@@ -3314,198 +3493,6 @@ type CartItem {
   quantity: Int
   userId: Int
   productId: Int
-}
-
-type CategorySelectItem {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  description: String
-  image: String
-}
-
-type CategoryItem {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  description: String
-  image: String
-}
-
-type CommentSelectItem {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
-  createdBy(where: UserFilters): CommentCreatedByRelation
-  post(where: PostFilters): CommentPostRelation
-  parent(where: CommentFilters): CommentParentRelation
-  children(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [CommentChildrenRelation!]!
-}
-
-type CommentCreatedByRelation {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  email: String
-  createdPosts(where: PostFilters, orderBy: PostOrderBy, offset: Int, limit: Int): [CommentCreatedByRelationCreatedPostsRelation!]!
-}
-
-type CommentCreatedByRelationCreatedPostsRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  parentId: Int
-  createdBy(where: UserFilters): CommentCreatedByRelationCreatedPostsRelationCreatedByRelation
-  parent(where: PostFilters): CommentCreatedByRelationCreatedPostsRelationParentRelation
-  comments(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [CommentCreatedByRelationCreatedPostsRelationCommentsRelation!]!
-}
-
-type CommentCreatedByRelationCreatedPostsRelationCreatedByRelation {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  email: String
-}
-
-type CommentCreatedByRelationCreatedPostsRelationParentRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  parentId: Int
-}
-
-type CommentCreatedByRelationCreatedPostsRelationCommentsRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
-}
-
-type CommentPostRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  parentId: Int
-  createdBy(where: UserFilters): CommentPostRelationCreatedByRelation
-  parent(where: PostFilters): CommentPostRelationParentRelation
-  comments(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [CommentPostRelationCommentsRelation!]!
-}
-
-type CommentPostRelationCreatedByRelation {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  email: String
-  createdPosts(where: PostFilters, orderBy: PostOrderBy, offset: Int, limit: Int): [CommentPostRelationCreatedByRelationCreatedPostsRelation!]!
-}
-
-type CommentPostRelationCreatedByRelationCreatedPostsRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  parentId: Int
-}
-
-type CommentPostRelationParentRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  parentId: Int
-}
-
-type CommentPostRelationCommentsRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
-}
-
-type CommentParentRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
-}
-
-type CommentChildrenRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
-}
-
-type CommentItem {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
 }
 
 type OrderSelectItem {
@@ -3806,6 +3793,180 @@ type OrderItemItem {
   productId: Int
 }
 
+type CommentSelectItem {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+  createdBy(where: UserFilters): CommentCreatedByRelation
+  post(where: PostFilters): CommentPostRelation
+  parent(where: CommentFilters): CommentParentRelation
+  children(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [CommentChildrenRelation!]!
+}
+
+type CommentCreatedByRelation {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  email: String
+  createdPosts(where: PostFilters, orderBy: PostOrderBy, offset: Int, limit: Int): [CommentCreatedByRelationCreatedPostsRelation!]!
+}
+
+type CommentCreatedByRelationCreatedPostsRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  parentId: Int
+  createdBy(where: UserFilters): CommentCreatedByRelationCreatedPostsRelationCreatedByRelation
+  parent(where: PostFilters): CommentCreatedByRelationCreatedPostsRelationParentRelation
+  comments(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [CommentCreatedByRelationCreatedPostsRelationCommentsRelation!]!
+}
+
+type CommentCreatedByRelationCreatedPostsRelationCreatedByRelation {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  email: String
+}
+
+type CommentCreatedByRelationCreatedPostsRelationParentRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  parentId: Int
+}
+
+type CommentCreatedByRelationCreatedPostsRelationCommentsRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+}
+
+type CommentPostRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  parentId: Int
+  createdBy(where: UserFilters): CommentPostRelationCreatedByRelation
+  parent(where: PostFilters): CommentPostRelationParentRelation
+  comments(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [CommentPostRelationCommentsRelation!]!
+}
+
+type CommentPostRelationCreatedByRelation {
+  id: Int!
+  createdAt: String
+  updatedAt: String
+  name: String
+  email: String
+  createdPosts(where: PostFilters, orderBy: PostOrderBy, offset: Int, limit: Int): [CommentPostRelationCreatedByRelationCreatedPostsRelation!]!
+}
+
+type CommentPostRelationCreatedByRelationCreatedPostsRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  parentId: Int
+}
+
+type CommentPostRelationParentRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  parentId: Int
+}
+
+type CommentPostRelationCommentsRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+}
+
+type CommentParentRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+}
+
+type CommentChildrenRelation {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+}
+
+type CommentItem {
+  id: Int!
+  content: String
+
+  """JSON"""
+  data: String
+  createdAt: String
+  updatedAt: String
+  authorId: Int
+  postId: Int
+  parentId: Int
+}
+
 type PostSelectItem {
   id: Int!
   content: String
@@ -3942,189 +4103,40 @@ type PostItem {
   parentId: Int
 }
 
-type ProductSelectItem {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  price: Int
-  description: String
-  image: String
-  rating: Int
-  categoryId: Int
-  brandId: Int
-  category(where: CategoryFilters): ProductCategoryRelation
-  brand(where: BrandFilters): ProductBrandRelation
-}
-
-type ProductCategoryRelation {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  description: String
-  image: String
-}
-
-type ProductBrandRelation {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  description: String
-  image: String
-}
-
-type ProductItem {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  price: Int
-  description: String
-  image: String
-  rating: Int
-  categoryId: Int
-  brandId: Int
-}
-
-type UserSelectItem {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  email: String
-  createdPosts(where: PostFilters, orderBy: PostOrderBy, offset: Int, limit: Int): [UserCreatedPostsRelation!]!
-}
-
-type UserCreatedPostsRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  parentId: Int
-  createdBy(where: UserFilters): UserCreatedPostsRelationCreatedByRelation
-  parent(where: PostFilters): UserCreatedPostsRelationParentRelation
-  comments(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [UserCreatedPostsRelationCommentsRelation!]!
-}
-
-type UserCreatedPostsRelationCreatedByRelation {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  email: String
-}
-
-type UserCreatedPostsRelationParentRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  parentId: Int
-}
-
-type UserCreatedPostsRelationCommentsRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
-  createdBy(where: UserFilters): UserCreatedPostsRelationCommentsRelationCreatedByRelation
-  post(where: PostFilters): UserCreatedPostsRelationCommentsRelationPostRelation
-  parent(where: CommentFilters): UserCreatedPostsRelationCommentsRelationParentRelation
-  children(where: CommentFilters, orderBy: CommentOrderBy, offset: Int, limit: Int): [UserCreatedPostsRelationCommentsRelationChildrenRelation!]!
-}
-
-type UserCreatedPostsRelationCommentsRelationCreatedByRelation {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  email: String
-}
-
-type UserCreatedPostsRelationCommentsRelationPostRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  parentId: Int
-}
-
-type UserCreatedPostsRelationCommentsRelationParentRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
-}
-
-type UserCreatedPostsRelationCommentsRelationChildrenRelation {
-  id: Int!
-  content: String
-
-  """JSON"""
-  data: String
-  createdAt: String
-  updatedAt: String
-  authorId: Int
-  postId: Int
-  parentId: Int
-}
-
-type UserItem {
-  id: Int!
-  createdAt: String
-  updatedAt: String
-  name: String
-  email: String
-}
-
 type Query {
+  user(offset: Int, limit: Int, orderBy: UserOrderBy, where: UserFilters): [UserSelectItem!]!
+  userSingle(offset: Int, orderBy: UserOrderBy, where: UserFilters): UserSelectItem
+  category(offset: Int, limit: Int, orderBy: CategoryOrderBy, where: CategoryFilters): [CategorySelectItem!]!
+  categorySingle(offset: Int, orderBy: CategoryOrderBy, where: CategoryFilters): CategorySelectItem
+  product(offset: Int, limit: Int, orderBy: ProductOrderBy, where: ProductFilters): [ProductSelectItem!]!
+  productSingle(offset: Int, orderBy: ProductOrderBy, where: ProductFilters): ProductSelectItem
   brand(offset: Int, limit: Int, orderBy: BrandOrderBy, where: BrandFilters): [BrandSelectItem!]!
   brandSingle(offset: Int, orderBy: BrandOrderBy, where: BrandFilters): BrandSelectItem
   cart(offset: Int, limit: Int, orderBy: CartOrderBy, where: CartFilters): [CartSelectItem!]!
   cartSingle(offset: Int, orderBy: CartOrderBy, where: CartFilters): CartSelectItem
-  category(offset: Int, limit: Int, orderBy: CategoryOrderBy, where: CategoryFilters): [CategorySelectItem!]!
-  categorySingle(offset: Int, orderBy: CategoryOrderBy, where: CategoryFilters): CategorySelectItem
-  comment(offset: Int, limit: Int, orderBy: CommentOrderBy, where: CommentFilters): [CommentSelectItem!]!
-  commentSingle(offset: Int, orderBy: CommentOrderBy, where: CommentFilters): CommentSelectItem
   order(offset: Int, limit: Int, orderBy: OrderOrderBy, where: OrderFilters): [OrderSelectItem!]!
   orderSingle(offset: Int, orderBy: OrderOrderBy, where: OrderFilters): OrderSelectItem
   orderItem(offset: Int, limit: Int, orderBy: OrderItemOrderBy, where: OrderItemFilters): [OrderItemSelectItem!]!
   orderItemSingle(offset: Int, orderBy: OrderItemOrderBy, where: OrderItemFilters): OrderItemSelectItem
+  comment(offset: Int, limit: Int, orderBy: CommentOrderBy, where: CommentFilters): [CommentSelectItem!]!
+  commentSingle(offset: Int, orderBy: CommentOrderBy, where: CommentFilters): CommentSelectItem
   post(offset: Int, limit: Int, orderBy: PostOrderBy, where: PostFilters): [PostSelectItem!]!
   postSingle(offset: Int, orderBy: PostOrderBy, where: PostFilters): PostSelectItem
-  product(offset: Int, limit: Int, orderBy: ProductOrderBy, where: ProductFilters): [ProductSelectItem!]!
-  productSingle(offset: Int, orderBy: ProductOrderBy, where: ProductFilters): ProductSelectItem
-  user(offset: Int, limit: Int, orderBy: UserOrderBy, where: UserFilters): [UserSelectItem!]!
-  userSingle(offset: Int, orderBy: UserOrderBy, where: UserFilters): UserSelectItem
 }
 
 type Mutation {
+  insertIntoUser(values: [UserInsertInput!]!): [UserItem!]!
+  insertIntoUserSingle(values: UserInsertInput!): UserItem
+  updateUser(set: UserUpdateInput!, where: UserFilters): [UserItem!]!
+  deleteFromUser(where: UserFilters): [UserItem!]!
+  insertIntoCategory(values: [CategoryInsertInput!]!): [CategoryItem!]!
+  insertIntoCategorySingle(values: CategoryInsertInput!): CategoryItem
+  updateCategory(set: CategoryUpdateInput!, where: CategoryFilters): [CategoryItem!]!
+  deleteFromCategory(where: CategoryFilters): [CategoryItem!]!
+  insertIntoProduct(values: [ProductInsertInput!]!): [ProductItem!]!
+  insertIntoProductSingle(values: ProductInsertInput!): ProductItem
+  updateProduct(set: ProductUpdateInput!, where: ProductFilters): [ProductItem!]!
+  deleteFromProduct(where: ProductFilters): [ProductItem!]!
   insertIntoBrand(values: [BrandInsertInput!]!): [BrandItem!]!
   insertIntoBrandSingle(values: BrandInsertInput!): BrandItem
   updateBrand(set: BrandUpdateInput!, where: BrandFilters): [BrandItem!]!
@@ -4133,14 +4145,6 @@ type Mutation {
   insertIntoCartSingle(values: CartInsertInput!): CartItem
   updateCart(set: CartUpdateInput!, where: CartFilters): [CartItem!]!
   deleteFromCart(where: CartFilters): [CartItem!]!
-  insertIntoCategory(values: [CategoryInsertInput!]!): [CategoryItem!]!
-  insertIntoCategorySingle(values: CategoryInsertInput!): CategoryItem
-  updateCategory(set: CategoryUpdateInput!, where: CategoryFilters): [CategoryItem!]!
-  deleteFromCategory(where: CategoryFilters): [CategoryItem!]!
-  insertIntoComment(values: [CommentInsertInput!]!): [CommentItem!]!
-  insertIntoCommentSingle(values: CommentInsertInput!): CommentItem
-  updateComment(set: CommentUpdateInput!, where: CommentFilters): [CommentItem!]!
-  deleteFromComment(where: CommentFilters): [CommentItem!]!
   insertIntoOrder(values: [OrderInsertInput!]!): [OrderItem!]!
   insertIntoOrderSingle(values: OrderInsertInput!): OrderItem
   updateOrder(set: OrderUpdateInput!, where: OrderFilters): [OrderItem!]!
@@ -4149,16 +4153,12 @@ type Mutation {
   insertIntoOrderItemSingle(values: OrderItemInsertInput!): OrderItemItem
   updateOrderItem(set: OrderItemUpdateInput!, where: OrderItemFilters): [OrderItemItem!]!
   deleteFromOrderItem(where: OrderItemFilters): [OrderItemItem!]!
+  insertIntoComment(values: [CommentInsertInput!]!): [CommentItem!]!
+  insertIntoCommentSingle(values: CommentInsertInput!): CommentItem
+  updateComment(set: CommentUpdateInput!, where: CommentFilters): [CommentItem!]!
+  deleteFromComment(where: CommentFilters): [CommentItem!]!
   insertIntoPost(values: [PostInsertInput!]!): [PostItem!]!
   insertIntoPostSingle(values: PostInsertInput!): PostItem
   updatePost(set: PostUpdateInput!, where: PostFilters): [PostItem!]!
   deleteFromPost(where: PostFilters): [PostItem!]!
-  insertIntoProduct(values: [ProductInsertInput!]!): [ProductItem!]!
-  insertIntoProductSingle(values: ProductInsertInput!): ProductItem
-  updateProduct(set: ProductUpdateInput!, where: ProductFilters): [ProductItem!]!
-  deleteFromProduct(where: ProductFilters): [ProductItem!]!
-  insertIntoUser(values: [UserInsertInput!]!): [UserItem!]!
-  insertIntoUserSingle(values: UserInsertInput!): UserItem
-  updateUser(set: UserUpdateInput!, where: UserFilters): [UserItem!]!
-  deleteFromUser(where: UserFilters): [UserItem!]!
 }

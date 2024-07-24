@@ -1,9 +1,8 @@
 import { pgTable, text } from 'drizzle-orm/pg-core';
-import { baseColumns } from 'utils/base.columns';
+import { baseColumns } from '@/drizzle/utils/base.columns';
 
-export const category = pgTable('category', {
+export const brand = pgTable('brand', {
   ...baseColumns,
-  // custom fields
   name: text('name'),
   description: text('description'),
   image: text('image'),

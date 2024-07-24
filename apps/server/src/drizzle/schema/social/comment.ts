@@ -7,8 +7,8 @@ import {
   serial,
   text,
 } from 'drizzle-orm/pg-core';
-import { user } from 'schema/shared';
-import { post } from 'schema/social/post';
+import { user } from '@/drizzle/schema/shared';
+import { post } from '@/drizzle/schema/social/post';
 
 export const comment = pgTable('comment', {
   id: serial('id').primaryKey(),

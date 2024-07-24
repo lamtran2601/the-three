@@ -2,7 +2,7 @@ import { product } from './product';
 import { relations } from 'drizzle-orm';
 import { integer, pgTable } from 'drizzle-orm/pg-core';
 import { user } from '../shared/user';
-import { baseColumns } from 'utils/base.columns';
+import { baseColumns } from '@/drizzle/utils/base.columns';
 
 export const cart = pgTable('cart', {
   ...baseColumns,

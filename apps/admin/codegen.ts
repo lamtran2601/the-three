@@ -1,16 +1,16 @@
-import type { CodegenConfig } from "@graphql-codegen/cli";
+import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
-  schema: "https://api.crm.refine.dev/graphql",
+  schema: 'http://localhost:3000/graphql',
   generates: {
-    "./src/interfaces/graphql.ts": {
-      plugins: ["typescript"],
-      documents: ["./src/**/*.tsx"],
+    './src/interfaces/graphql.ts': {
+      plugins: ['typescript'],
+      documents: ['./src/**/*.tsx'],
       config: {
         skipTypename: true,
         enumsAsTypes: true,
       },
-      hooks: { afterOneFileWrite: ["eslint --fix", "prettier --write"] },
+      // hooks: { afterOneFileWrite: ['eslint --fix', 'prettier --write'] },
     },
   },
   ignoreNoDocuments: true,

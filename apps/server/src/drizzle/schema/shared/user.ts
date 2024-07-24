@@ -1,4 +1,4 @@
-import { baseColumns } from 'utils/base.columns';
+import { baseColumns } from '@/drizzle/utils/base.columns';
 import { pgTable, serial, text } from 'drizzle-orm/pg-core';
 
 export const user = pgTable(

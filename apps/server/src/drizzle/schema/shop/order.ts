@@ -1,4 +1,4 @@
-import { baseColumns } from 'utils/base.columns';
+import { baseColumns } from '@/drizzle/utils/base.columns';
 import { relations } from 'drizzle-orm';
 import { date, integer, pgTable, serial, text } from 'drizzle-orm/pg-core';
 import { user } from '../shared/user';
